@@ -77,4 +77,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
+    //Se crea la funcion para la tabla, basado en lo que ingrese el usuario
+      function crear_tabla() {
+        tableBody.innerHTML = '';
+    
+        const inputs = form.getElementsByTagName('input');
+    
+        for (let i = 0; i < inputs.length; i++) {
+          const input = inputs[i];
+          const inputValue = input.value;
+    
+          const row = document.createElement('tr');
+          const indexCell = document.createElement('td');
+          const valueCell = document.createElement('td');
+    
+          indexCell.textContent = i + 1;
+          valueCell.textContent = inputValue;
+    
+          row.appendChild(indexCell);
+          row.appendChild(valueCell);
+    
+          tableBody.appendChild(row);
+        }
+    
+        tableContainer.style.display = 'block';
+      }
+    });
     
