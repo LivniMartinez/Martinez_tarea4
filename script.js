@@ -31,9 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function addInput() {
     // Contenedor de inputs
-    const inputsContainer = document.getElementById('inputs');
-    // Cantidad actual de inputs 
-    const inputCount = inputsContainer.children.length; 
+    inputCount++;
+    const newInput = document.createElement('div');
+    newInput.className = 'form-group';
+    newInput.innerHTML = `
+      <label for="input${inputCount}"> Campo ${inputCount}:</label>
+      <input type="text" class="form-control" id="input${inputCount}" name="input${inputCount}">
+    `;
+    inputsContainer.appendChild(newInput);
+    }
 
         
     // Crear un nuevo elemento de input
