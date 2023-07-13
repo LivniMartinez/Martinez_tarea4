@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let inputCount = inputsContainer.children.length;
 
     // Asociar el evento click al botón "Agregar Input"
-    addInputButton.addEventListener('click', addInput); 
+    agrega_input.addEventListener('click', addInput); 
     // Asociar el evento click al botón "Eliminar Input"
-    removeInputButton.addEventListener('click', removeInput); 
-    // Asociar el evento submit al formulario
-    form.addEventListener('submit', handleSubmit); 
+    quitar_input.addEventListener('click', removeInput);
+    // Asociar el evento click al formulario para verificar
+    enviar.addEventListener('click', verificar);
   
     function addInput() {
     // Contenedor de inputs
