@@ -3,8 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const agrega_input = document.getElementById('agrega_input');
     // Botón "Eliminar Input"
     const quitar_input = document.getElementById('quitar_input');
+    
+    //Enviar Formulario
+    const enviar = document.getElementById('enviar');
+
     // Formulario
-    const form = document.getElementById('Formulario'); 
+    const form = document.getElementById('Formulario');
   
     // Asociar el evento click al botón "Agregar Input"
     addInputButton.addEventListener('click', addInput); 
