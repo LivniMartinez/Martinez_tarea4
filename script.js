@@ -9,7 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Formulario
     const form = document.getElementById('Formulario');
-  
+    
+    //Contenedor de inputs
+    const inputsContainer = document.getElementById('inputs');
+    
+    //Contenedor de la tabla
+    const tableContainer = document.getElementById('tableContainer');
+    
+    //Cuerpo de la tabla
+    const tableBody = document.getElementById('tableBody');
+
+
+
     // Asociar el evento click al botón "Agregar Input"
     addInputButton.addEventListener('click', addInput); 
     // Asociar el evento click al botón "Eliminar Input"
