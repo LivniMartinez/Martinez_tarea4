@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //Cuerpo de la tabla
     const tableBody = document.getElementById('tableBody');
 
-
+    //Cantidad de hijos del contenedor de los inputs
+    let inputCount = inputsContainer.children.length;
 
     // Asociar el evento click al botón "Agregar Input"
     addInputButton.addEventListener('click', addInput); 
