@@ -38,7 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
   }
     // Función para eliminar el último input del formulario
     function removeInput() {
-    const inputsContainer = document.getElementById('inputs'); // Contenedor de inputs
-    const inputCount = inputsContainer.children.length; // Cantidad actual de inputs
+    // Contenedor de inputs
+    const inputsContainer = document.getElementById('inputs'); 
+    // Cantidad actual de inputs
+    const inputCount = inputsContainer.children.length; 
+    
     }
 
+    // Verificar si hay más de un input antes de eliminarlo
+    if (inputCount > 1) {
+        // Eliminar el último input agregado
+        inputsContainer.removeChild(inputsContainer.lastChild); 
+      }
+    }
+  
