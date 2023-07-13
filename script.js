@@ -14,4 +14,23 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', handleSubmit);
     
 
+    // Función para agregar un nuevo input al formulario
+    function addInput() {
+    // Contenedor de los inputs
+    const inputsContainer = document.getElementById('inputs'); 
+    // Cantidad actual de los inputs
+    const inputCount = inputsContainer.children.length; 
+
+    // Crear un nuevo elemento de input
+    const newInput = document.createElement('div'); 
+    newInput.className = 'form-group';
+    newInput.innerHTML = `
+      <label for="input${inputCount + 1}">Input ${inputCount + 1}:</label>
+      <input type="text" class="form-control" id="input${inputCount + 1}" name="input${inputCount + 1}">
+    `;
+
+    // Agregar el nuevo input al contenedor
+    inputsContainer.appendChild(newInput); 
+  }
+
 )}
