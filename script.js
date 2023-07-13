@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const vacios_nombres = vacios.map(id => id.replace('input', 'Campo '));
       // Alerta para llenar los inputs antes de enviar el formulario
       alert(`Llene los siguientes espacios: ${vacios_nombres.join(', ')}`);
+      console.log(`Llene los siguientes espacios: ${vacios_nombres.join(', ')}`);
     }
   }
 
