@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Botón "Agregar Input"
-    const addInputButton = document.querySelector('.btn-primary'); // Botón "Agregar Input"
+    const addInputButton = document.querySelector('.btn-primary');
     // Botón "Eliminar Input"
     const removeInputButton = document.querySelector('.btn-danger'); 
     // Formulario
@@ -15,9 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function addInput() {
     // Contenedor de inputs
-      const inputsContainer = document.getElementById('inputs');
+    const inputsContainer = document.getElementById('inputs');
     // Cantidad actual de inputs 
-      const inputCount = inputsContainer.children.length; 
+    const inputCount = inputsContainer.children.length; 
+
         
     // Crear un nuevo elemento de input
       const newInput = document.createElement('div'); 
