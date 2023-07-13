@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Botón "Agregar Input"
-    const addInputButton = document.querySelector('.btn-primary');
+    const agrega_input = document.getElementById('agrega_input');
     // Botón "Eliminar Input"
-    const removeInputButton = document.querySelector('.btn-danger'); 
+    const quitar_input = document.getElementById('quitar_input');
     // Formulario
     const form = document.getElementById('Formulario'); 
   
