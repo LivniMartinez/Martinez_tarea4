@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const addInputButton = document.querySelector('.btn-primary'); 
     // Botón "Agregar Input"
     const removeInputButton = document.querySelector('.btn-danger');
-     // Botón "Eliminar Input"
+    // Botón "Eliminar Input"
     const form = document.getElementById('Formulario'); 
     
     // Formulario
@@ -46,9 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Verificar si hay más de un input antes de eliminarlo
-    if (inputCount > 1) {
-        // Eliminar el último input agregado
+        if (inputCount > 1) {
+    // Eliminar el último input agregado
         inputsContainer.removeChild(inputsContainer.lastChild); 
       }
     }
-  
+    // Función para manejar el envío del formulario
+        function handleSubmit(event) {
+    // Prevenir el envío del formulario
+        event.preventDefault(); 
+    // Obtener todos los inputs dentro del formulario
+    const inputs = form.getElementsByTagName('input'); 
+    let valid = true;
+        }
