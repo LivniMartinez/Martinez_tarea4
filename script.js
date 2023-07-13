@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     //Se obtienen las referencias a los elementos relevantes en el documento HTML
-    const addInputButton = document.querySelector('.btn-primary'); // Botón "Agregar Input"
-    const removeInputButton = document.querySelector('.btn-danger'); // Botón "Eliminar Input"
-    const form = document.getElementById('Formulario'); // Formulario
+    const addInputButton = document.querySelector('.btn-primary'); 
+    // Botón "Agregar Input"
+    const removeInputButton = document.querySelector('.btn-danger');
+     // Botón "Eliminar Input"
+    const form = document.getElementById('Formulario'); 
+    
+    // Formulario
 
     // Se asocia el evento click al botón "Agregar Input"
         addInputButton.addEventListener('click', addInput);
@@ -32,5 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Agregar el nuevo input al contenedor
     inputsContainer.appendChild(newInput); 
   }
+    // Función para eliminar el último input del formulario
+    function removeInput() {
+    const inputsContainer = document.getElementById('inputs'); // Contenedor de inputs
+    const inputCount = inputsContainer.children.length; // Cantidad actual de inputs
+    }
 
-)}
