@@ -41,29 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
     inputsContainer.appendChild(newInput);
     }
 
-        
-    // Crear un nuevo elemento de input
-      const newInput = document.createElement('div'); 
-      newInput.className = 'form-group';
-      newInput.innerHTML = `
-        <label for="input${inputCount + 1}">Input ${inputCount + 1}:</label>
-        <input type="text" class="form-control" id="input${inputCount + 1}" name="input${inputCount + 1}">
-      `;
-    // Agregar el nuevo input al contenedor
-      inputsContainer.appendChild(newInput); 
-    }
-  
+    //Eliminacion de inputs
     function removeInput() {
-    // Contenedor de inputs
-      const inputsContainer = document.getElementById('inputs');
-    // Cantidad actual de inputs 
-      const inputCount = inputsContainer.children.length; 
-  
-      if (inputCount > 1) {
-    // Eliminar el último input agregado
-        inputsContainer.removeChild(inputsContainer.lastChild); 
+      function removeInput() {
+        if (inputCount > 1) {
+          inputsContainer.removeChild(inputsContainer.lastChild);
+          inputCount--;
+        }
       }
-    }
   
     function handleSubmit(event) {
     // Prevenir el envío del formulario
