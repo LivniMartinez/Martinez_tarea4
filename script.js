@@ -49,31 +49,32 @@ document.addEventListener('DOMContentLoaded', function() {
           inputCount--;
         }
       }
-  
-    function handleSubmit(event) {
-    // Prevenir el envío del formulario
-      event.preventDefault(); 
     
-    // Obtener todos los inputs dentro del formulario
-      const inputs = form.getElementsByTagName('input'); 
-      let valid = true;
-  
-      for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value.trim() === '') {
-    // Agregar una clase de error a los inputs vacíos
-          inputs[i].classList.add('error'); 
-          valid = false;
+      function verificar() {
+         // Prevenir el envío del formulario verificacion
+        const inputs = form.getElementsByTagName('input');
+        // Obtener todos los inputs dentro del formulario
+        let valid = true;
+        let vacios = [];
+    
+        for (let i = 0; i < inputs.length; i++) {
+          if (inputs[i].value.trim() === '') {
+            inputs[i].classList.add('error');
+            valid = false;
+            vacios.push(inputs[i].id);
+          } else {
+          // Eliminar la clase de error de los inputs llenos
+            inputs[i].classList.remove('error');
+          }
+        }
+    
+        if (valid) {
+          crear_tabla();
         } else {
-    // Eliminar la clase de error de los inputs llenos
-          inputs[i].classList.remove('error'); 
+          const vacions_nombre = vacios.map(id => id.replace('input', 'Campo '));
+          //alerta para llenar los inputs antes de enviar el formulario
+          alert(`llene los siguientes espacios ${vacions_nombre.join(', ')}`);
         }
       }
-  
-      if (valid) {
-        alert('Formulario enviado correctamente');
-      
-      } else {
-        alert('Por favor, complete todos los campos');
-      }
-    }
-  });
+
+    
