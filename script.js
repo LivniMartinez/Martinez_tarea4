@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <input type="text" class="form-control" id="input${inputCount}" name="input${inputCount}">
     `;
     inputsContainer.appendChild(newInput);
+    console.log(`Se agregó el campo ${inputCount}`);
   }
 
   // Eliminación de inputs
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (inputCount > 1) {
       inputsContainer.removeChild(inputsContainer.lastChild);
       inputCount--;
+      console.log(`Se eliminó el campo ${inputCount + 1}`);
     }
   }
 
