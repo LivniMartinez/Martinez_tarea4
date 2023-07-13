@@ -58,4 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Obtener todos los inputs dentro del formulario
     const inputs = form.getElementsByTagName('input'); 
     let valid = true;
+     
+    // Validar que todos los inputs estén llenos
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === '') {
+    // Agregar una clase de error a los inputs vacíos
+          inputs[i].classList.add('error'); 
+          valid = false;
+        } else {
+    // Eliminar la clase de error de los inputs llenos
+          inputs[i].classList.remove('error'); 
         }
+      }
+  
+      if (valid) {
+        alert('Formulario enviado correctamente');
+
+      } else {
+        alert('Por favor, complete todos los campos');
+      }
+  });
