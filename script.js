@@ -1,65 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    //Se obtienen las referencias a los elementos relevantes en el documento HTML
-    const addInputButton = document.querySelector('.btn-primary');
     // Botón "Agregar Input"
-    const const removeInputButton = document.querySelector('.btn-danger');
+    const addInputButton = document.querySelector('.btn-primary'); // Botón "Agregar Input"
     // Botón "Eliminar Input"
-    const form = document.getElementById('Formulario');
-    
+    const removeInputButton = document.querySelector('.btn-danger'); 
     // Formulario
-
-    // Se asocia el evento click al botón "Agregar Input"
-        addInputButton.addEventListener('click', addInput);
-
-    // Se asocia el evento click al botón "Eliminar Input"
-        removeInputButton.addEventListener('click', removeInput);
-
-    // Se asocia el evento submit al formulario
-        form.addEventListener('submit', handleSubmit);
-    
-
-    // Función para agregar un nuevo input al formulario
+    const form = document.getElementById('Formulario'); 
+  
+    // Asociar el evento click al botón "Agregar Input"
+    addInputButton.addEventListener('click', addInput); 
+    // Asociar el evento click al botón "Eliminar Input"
+    removeInputButton.addEventListener('click', removeInput); 
+    // Asociar el evento submit al formulario
+    form.addEventListener('submit', handleSubmit); 
+  
     function addInput() {
-    // Contenedor de los inputs
-    const inputsContainer = document.getElementById('inputs'); 
-    // Cantidad actual de los inputs
-    const inputCount = inputsContainer.children.length; 
-
+    // Contenedor de inputs
+      const inputsContainer = document.getElementById('inputs');
+    // Cantidad actual de inputs 
+      const inputCount = inputsContainer.children.length; 
+        
     // Crear un nuevo elemento de input
-    const newInput = document.createElement('div');
-    newInput.className = 'form-group';
-    newInput.innerHTML = `
-      <label for="input${inputCount + 1}">Input ${inputCount + 1}:</label>
-      <input type="text" class="form-control" id="input${inputCount + 1}" name="input${inputCount + 1}">
-    `;
-
-
+      const newInput = document.createElement('div'); 
+      newInput.className = 'form-group';
+      newInput.innerHTML = `
+        <label for="input${inputCount + 1}">Input ${inputCount + 1}:</label>
+        <input type="text" class="form-control" id="input${inputCount + 1}" name="input${inputCount + 1}">
+      `;
     // Agregar el nuevo input al contenedor
-    inputsContainer.appendChild(newInput); 
-  }
-    // Función para eliminar el último input del formulario
+      inputsContainer.appendChild(newInput); 
+    }
+  
     function removeInput() {
     // Contenedor de inputs
-    const inputsContainer = document.getElementById('inputs'); 
-    // Cantidad actual de inputs
-    const inputCount = inputsContainer.children.length;
-    
-    // Verificar si hay más de un input antes de eliminarlo
-        if (inputCount > 1) {
+      const inputsContainer = document.getElementById('inputs');
+    // Cantidad actual de inputs 
+      const inputCount = inputsContainer.children.length; 
+  
+      if (inputCount > 1) {
     // Eliminar el último input agregado
         inputsContainer.removeChild(inputsContainer.lastChild); 
       }
     }
-    // Función para manejar el envío del formulario
-        function handleSubmit(event) {
+  
+    function handleSubmit(event) {
     // Prevenir el envío del formulario
-        event.preventDefault(); 
+      event.preventDefault(); 
+    
     // Obtener todos los inputs dentro del formulario
-    const inputs = form.getElementsByTagName('input'); 
-    let valid = true;
-     
-    // Validar que todos los inputs estén llenos
-    for (let i = 0; i < inputs.length; i++) {
+      const inputs = form.getElementsByTagName('input'); 
+      let valid = true;
+  
+      for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value.trim() === '') {
     // Agregar una clase de error a los inputs vacíos
           inputs[i].classList.add('error'); 
@@ -72,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       if (valid) {
         alert('Formulario enviado correctamente');
-
+      
       } else {
         alert('Por favor, complete todos los campos');
       }
