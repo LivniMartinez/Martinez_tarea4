@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-t    <title>Tarea_4</title>
+  <title>Tarea_4</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+    .error {
+        border: 1px solid rgb(71, 39, 145);
+    }
+  </style>
 </head>
 <body>
-  
-    
+  <div class="container">
+    <h2>Formulario_Dinámico</h2>
+    <form id="Formulario">
+      <div id="inputs">
+        <div class="form-group">
+          <label for="input1">Input 1:</label>
+          <input type="text" class="form-control" id="input1" name="input1">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="addInput()">Agregar Input</button>
+      <button type="button" class="btn btn-danger" onclick="removeInput()">Eliminar Input</button>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+  </div>
 
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
